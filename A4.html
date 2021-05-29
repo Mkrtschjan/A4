@@ -1,0 +1,57 @@
+<html>
+<body>
+
+<form onsubmit="return A()">
+  String: <input type="text" id="String" size="50" name="String"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function A() {
+    let reg = /^\s*[0-9]+\d*[.]?\d*\s*$/;
+    
+    let reg1 = /^(0)$/;
+    
+    let reg2 = /^[1-9]+[0-9]*$/;
+    
+    let reg3 = /^[1-9]+[0-9]*\.[0-9]+$/;
+    
+    let reg4 = /^[0]?\.[0-9]+$/;
+	
+    let str = document.getElementById("String").value;
+	
+    let digit = 0;
+    
+    if(reg.test(str)) {
+
+        digit = str.match(/\d+\.?\d*/);
+
+        if (reg1.test(digit)) {
+            document.write("Integer received " + str);
+        }
+        
+        else if (reg2.test(digit) && digit <= (2147483647)){
+            document.write("Integer received " + str);
+        }
+
+        
+        else if (reg3.test(digit)){
+            document.write("Floating-point received " + str);
+        }
+        
+        else if (reg4.test(digit)){
+            document.write("Floating-point received " + str);
+        }
+        
+        else {
+		    document.write("String received " + str);
+        }
+    }
+	else {
+		document.write("String received " + str);
+    }
+}
+</script>
+
+</body>
+</html>
