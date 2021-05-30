@@ -1,4 +1,4 @@
-# A4
+# Input
 Program gets input from user. 
 If the input contains numbers not starting with zero, the programs identifies the input as an integer. 
 If the input contains floating point numbers that do not start with padded zeros, the program identifies it as a floating point number. 
